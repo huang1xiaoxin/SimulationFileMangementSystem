@@ -9,7 +9,7 @@ public class FileModel {
 	private int attr;//表示是文件还是目录，1:表示文件，2:表示目录
 	//用来存储改节点下的文件和目录
 	private Map<String,FileModel> filesMap=new HashMap<String,FileModel>();
-	private FileModel fatherFileModel;//用来记录上一级的目录
+	private FileModel fatherFileModel;//  用来记录上一级的目录
 	
 	public FileModel(String name, int attr) {
 		super();

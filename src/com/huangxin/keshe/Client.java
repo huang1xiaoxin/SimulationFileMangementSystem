@@ -11,7 +11,7 @@ public class Client {
 	private static void HandelMessage(FileHandle fileHandle) {
 		Scanner scan=new Scanner(System.in);
 		String str="";
-		System.out.println("**************欢迎使用文件管理器**************");
+		System.out.println("**************欢迎使用文件管理器******************");
 		System.out.print(fileHandle.returnCurrentPath()+" ");
 		while((str=scan.nextLine())!=null) {
 			String[] strArr=str.split(" ");
@@ -89,7 +89,7 @@ public class Client {
 					  }
 				}
 				if(isExit) {
-					System.out.println("退出文件系统。。。。");
+					System.out.println("退出文件系统。。。");
 					break;
 				}else {
 					System.out.print(fileHandle.returnCurrentPath()+" ");

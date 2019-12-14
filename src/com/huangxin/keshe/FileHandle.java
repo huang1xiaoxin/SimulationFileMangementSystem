@@ -180,6 +180,11 @@ public class FileHandle {
 		}
 		//获取目录的FileModel对象
 		FileModel valus=totailFileAndDistory.get(distoryPath);
+		//判断要删除的文件夹是否是正在打开的文件夹，如果是正提示用户不可以删除
+		if(distoryPath.equals(returnCurrentPath())) {
+			System.out.println("目录正在打开，不可以删除！！");
+			return;
+		}
 		if(valus!=null) {
 			//判断是否要删除整个目录
 			if(valus.getName().equals("root:")) {
