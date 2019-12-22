@@ -164,11 +164,16 @@ public class FileHandle {
 		FileModel valus=totailFileAndDistory.get(filePath);
 		//判断要删除的文件是否存在
 		if(valus!=null) {
-			//在所以的文件夹中删除
-			totailFileAndDistory.remove(filePath);
-			//在父类的目录删除
-			valus.getFatherFileModel().getFilesMap().remove(valus.getName());
-			System.out.println(valus.getName()+"文件已删除！");
+			if(valus.getAttr()==FILE_CODE) {
+				//在所以的文件夹中删除
+				totailFileAndDistory.remove(filePath);
+				//在父类的目录删除
+				valus.getFatherFileModel().getFilesMap().remove(valus.getName());
+				System.out.println(valus.getName()+"文件已删除！");
+			}else {
+				System.out.println("删除失败，del不可以删除目录！");
+			}
+			
 		}else {
 			System.out.println("删除失败，文件不存在！");
 		}	
@@ -254,7 +259,8 @@ public class FileHandle {
 			for(Map.Entry<String, FileModel> entries:mp.entrySet()) {
 				files.add(entries.getValue());
 			}
-			for(int i=0;i<files.size();i++) {
+			for(int i=0;i<files.
+				size();i++) {
 				boolean success=deleteAll(files.get(i));
 				if(!success) {
 					return false;
